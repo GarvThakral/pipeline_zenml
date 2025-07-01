@@ -12,6 +12,6 @@ def clean_data(data:pd.DataFrame)->Tuple[pd.DataFrame,pd.DataFrame,pd.Series,pd.
     returns : data :pd.DataFrame
     """
     clean_data = DataCleaning(data,DataPreProcessing()).handle_data()
-    divide_data = DataCleaning(clean_data,DataDivideStrategy())
+    divide_data = DataCleaning(clean_data,DataDivideStrategy()) # type: ignore
     X_train , X_test , y_train , y_test = divide_data.handle_data()
-    return X_train , X_test , y_train , y_test
+    return X_train , X_test , y_train , y_test # type: ignore

@@ -34,11 +34,11 @@ class DataPreProcessing(DataStrategy):
                     ],
                     axis=1
                 )
-            data["product_weight_g"].fillna(data["product_weight_g"].median(),inplace=True)
-            data["product_length_cm"].fillna(data["product_length_cm"].median(),inplace=True)   
-            data["product_height_cm"].fillna(data["product_height_cm"].median(),inplace=True)
-            data["product_width_cm"].fillna(data["product_width_cm"].median(),inplace=True)
-            data["review_comment_message"].fillna("No review", inplace=True)
+            data["product_weight_g"] = data["product_weight_g"].fillna(data["product_weight_g"].median(),inplace=True)
+            data["product_length_cm"] = data["product_length_cm"].fillna(data["product_length_cm"].median(),inplace=True)   
+            data["product_height_cm"] = data["product_height_cm"].fillna(data["product_height_cm"].median(),inplace=True)
+            data["product_width_cm"] = data["product_width_cm"].fillna(data["product_width_cm"].median(),inplace=True)
+            data["review_comment_message"] = data["review_comment_message"].fillna("No review", inplace=True)
 
             data = data.select_dtypes(include=[np.number])
             cols_to_drop = [

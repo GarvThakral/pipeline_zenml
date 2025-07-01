@@ -36,7 +36,7 @@ class SVCClassifier(ModelDevelopment):
         logging.info("Training SVC model...")
         try:
             model = SVC()
-            model.fit(X = X_train , y = y_train)
+            model = model.fit(X = X_train , y = y_train)
             return model
         except Exception as e:
             logging.error(f"Error during model training: {e}")
